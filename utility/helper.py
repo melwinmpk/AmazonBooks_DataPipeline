@@ -5,7 +5,7 @@ class database_helper:
     def __init__(self,data = 'scrapylearning'):
         database_name = data
 
-        f = open('D:/Learning/AmazonBooks_DataPipeline/booklist/booklist/utility/databasecredentials.json')
+        f = open('D:/Learning/AmazonBooks_DataPipeline/utility/databasecredentials.json')
         data = json.load(f)
         f.close()
 
