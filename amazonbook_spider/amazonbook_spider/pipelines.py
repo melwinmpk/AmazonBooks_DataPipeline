@@ -17,7 +17,13 @@ class AmazonbookSpiderPipeline_booklist:
         
     def process_item(self, item, spider):
         sql_query = f'''
-                     INSERT INTO  amazone_books VALUES (
+                     INSERT INTO  amazone_books
+                     (book_title
+                      ,book_amount
+                      ,book_author
+                      ,book_rating
+                      ,book_link) 
+                     VALUES (
                      "{item["book_title"][0]}",
                      "{item["book_amount"][0]}",
                      "{(((''.join(item["book_author"])).split("by")[1]).split('|')[0]).strip()}",
