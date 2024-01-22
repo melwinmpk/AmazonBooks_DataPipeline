@@ -1,7 +1,6 @@
 import scrapy
 import sys
-sys.path.append("D:/Learning/AmazonBooks_DataPipeline/utility")
-from helper import database_helper
+from ..utility.helper import database_helper
 from ..items import AmazonbookSpiderItem_bookreview
 
 
