@@ -3,3 +3,4 @@ booklist/__pycache__/*
 utility/databasecredentials.json
 booklist
 config/dbconnectors.cnf
+.ipynb_checkpoints

@@ -41,7 +41,7 @@ class BookreviewSpider(scrapy.Spider):
             item['book_id'] = BookreviewSpider.current_bookid
             item['reviewer_name'] = review.xpath('.//span[contains(concat(" ",normalize-space(@class)," ")," a-profile-name ")]/text()')[0].extract()
             item['rating'] = review.xpath('.//i[contains(concat(" ",normalize-space(@class)," ")," review-rating ")]/span[contains(concat(" ",normalize-space(@class)," ")," a-icon-alt ")]/text()')[0].extract()
-            item['review_title'] = review.xpath('.//*[contains(concat(" ",normalize-space(@class)," ")," a-text-bold ")]//span/text()')[1].extract()
+            item['review_title'] = review.xpath('.//*[contains(concat(" ",normalize-space(@class)," ")," a-text-bold ")]//span/text()')[-1].extract()
             item['review_content'] = review.xpath('.//*[contains(concat(" ",normalize-space(@class)," ")," a-expander-partial-collapse-content ")]//span/text()')[0].extract()
             item['reviewed_on'] = review.xpath('.//span[contains(concat(" ",normalize-space(@class)," ")," review-date ")]/text()')[0].extract()
             yield item
