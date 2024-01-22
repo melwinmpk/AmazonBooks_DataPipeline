@@ -33,3 +33,28 @@ class AmazonbookSpiderPipeline_booklist:
         '''
         self.db.query_exec(sql_query)
         return item
+    
+class AmazonbookSpiderPipeline_bookreview:
+    def __init__(self):
+        self.db = database_helper('amazonebooks')
+        
+    def process_item(self, item, spider):
+        sql_query = f'''
+                     INSERT INTO  amazonebook_reviews
+                     (book_id
+                    ,reviewer_name
+                    ,rating
+                    ,review_title
+                    ,review_content
+                    ,reviewed_on) 
+                     VALUES (
+                     "{item['book_id']}",
+                     "{item['reviewer_name']}",
+                     "{item['rating']}",
+                     "{item['review_title']}",
+                     "{item['review_content']}",
+                     "{item['reviewed_on']}"
+                     )
+        '''
+        self.db.query_exec(sql_query)
+        return item

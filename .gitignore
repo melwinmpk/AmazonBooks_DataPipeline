@@ -2,3 +2,4 @@ __pycache__
 booklist/__pycache__/*
 utility/databasecredentials.json
 booklist
+config/dbconnectors.cnf

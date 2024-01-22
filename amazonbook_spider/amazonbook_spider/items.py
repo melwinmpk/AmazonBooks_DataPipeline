@@ -14,3 +14,13 @@ class AmazonbookSpiderItem_booklist(scrapy.Item):
     book_author = scrapy.Field()
     book_rating = scrapy.Field()
     book_link = scrapy.Field()
+
+class AmazonbookSpiderItem_bookreview(scrapy.Item):
+    # define the fields for your item here like:
+    # name = scrapy.Field()
+    book_id = scrapy.Field()
+    reviewer_name = scrapy.Field()
+    rating = scrapy.Field()
+    review_title = scrapy.Field()
+    review_content = scrapy.Field()
+    reviewed_on = scrapy.Field()
