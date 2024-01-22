@@ -7,6 +7,7 @@ class BooklistSpider(scrapy.Spider):
     allowed_domains = ["amazon.in"]
     start_urls =  ["https://www.amazon.in/s?i=stripbooks&bbn=976389031&rh=n%3A976389031%2Cp_n_publication_date%3A2684819031%2Cp_n_feature_three_browse-bin%3A9141482031%2Cp_n_binding_browse-bin%3A1318376031&dc&qid=1705764773&rnid=1318374031&ref=sr_nr_p_n_binding_browse-bin_9&ds=v1%3ADnZrpwSN6HQUdKmMPrF0hUMVrGOY%2FbMRz0yDiGbpnnw"]
     page_number = 2
+    current_spider = 'booklist'
 
     def parse(self, response):
         item_container = AmazonbookSpiderItem_booklist()

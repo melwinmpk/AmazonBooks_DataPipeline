@@ -69,8 +69,8 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   "amazonbook_spider.pipelines.AmazonbookSpiderPipeline_booklist": 300,
-   "amazonbook_spider.pipelines.AmazonbookSpiderPipeline_bookreview": 301,
+   "amazonbook_spider.pipelines.AmazonbookSpider_booklistPipeline": 300,
+   "amazonbook_spider.pipelines.AmazonbookSpider_bookreviewPipeline": 800,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

@@ -10,6 +10,7 @@ class BookreviewSpider(scrapy.Spider):
     allowed_domains = ["amazon.in"]
     start_urls = ["https://amazon.in"]
     current_bookid = -1
+    current_spider = 'bookreview'
 
     def start_requests(self):    # function name should not change
         # Get all the serials
@@ -25,7 +26,7 @@ class BookreviewSpider(scrapy.Spider):
         db = database_helper('amazonebooks')
         query = '''
                     SELECT book_id, book_link from amazone_books 
-                    WHERE book_id not in (select book_id from amazonebook_reviews) limit 2;
+                    WHERE book_id not in (select book_id from amazonebook_reviews);
                 '''
         query_output = db.query_exec(query)
         return query_output
@@ -38,10 +39,10 @@ class BookreviewSpider(scrapy.Spider):
 
         for review in list_of_reviews:
             item['book_id'] = BookreviewSpider.current_bookid
-            item['reviewer_name'] = review.xpath('.//span[contains(concat(" ",normalize-space(@class)," ")," a-profile-name ")]/text()').extract()
-            item['rating'] = review.xpath('.//i[contains(concat(" ",normalize-space(@class)," ")," review-rating ")]/span[contains(concat(" ",normalize-space(@class)," ")," a-icon-alt ")]/text()').extract()
-            item['review_title'] = review.xpath('.//*[contains(concat(" ",normalize-space(@class)," ")," a-text-bold ")]//span/text()').extract()
-            item['review_content'] = review.xpath('.//*[contains(concat(" ",normalize-space(@class)," ")," a-expander-partial-collapse-content ")]//span/text()').extract()
-            item['reviewed_on'] = review.xpath('.//span[contains(concat(" ",normalize-space(@class)," ")," review-date ")]/text()').extract()
+            item['reviewer_name'] = review.xpath('.//span[contains(concat(" ",normalize-space(@class)," ")," a-profile-name ")]/text()')[0].extract()
+            item['rating'] = review.xpath('.//i[contains(concat(" ",normalize-space(@class)," ")," review-rating ")]/span[contains(concat(" ",normalize-space(@class)," ")," a-icon-alt ")]/text()')[0].extract()
+            item['review_title'] = review.xpath('.//*[contains(concat(" ",normalize-space(@class)," ")," a-text-bold ")]//span/text()')[1].extract()
+            item['review_content'] = review.xpath('.//*[contains(concat(" ",normalize-space(@class)," ")," a-expander-partial-collapse-content ")]//span/text()')[0].extract()
+            item['reviewed_on'] = review.xpath('.//span[contains(concat(" ",normalize-space(@class)," ")," review-date ")]/text()')[0].extract()
             yield item
         

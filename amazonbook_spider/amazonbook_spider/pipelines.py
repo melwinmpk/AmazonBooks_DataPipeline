@@ -9,13 +9,17 @@ from itemadapter import ItemAdapter
 import sys
 sys.path.append("D:/Learning/AmazonBooks_DataPipeline/utility")
 from helper import database_helper
+from datetime import datetime
 
 
-class AmazonbookSpiderPipeline_booklist:
+class AmazonbookSpider_booklistPipeline:
     def __init__(self):
         self.db = database_helper('amazonebooks')
         
     def process_item(self, item, spider):
+        if spider.current_spider != 'booklist':
+            return item
+        
         sql_query = f'''
                      INSERT INTO  amazone_books
                      (book_title
@@ -34,11 +38,14 @@ class AmazonbookSpiderPipeline_booklist:
         self.db.query_exec(sql_query)
         return item
     
-class AmazonbookSpiderPipeline_bookreview:
+class AmazonbookSpider_bookreviewPipeline:
     def __init__(self):
         self.db = database_helper('amazonebooks')
         
     def process_item(self, item, spider):
+        if spider.current_spider != 'bookreview':
+            return item
+        
         sql_query = f'''
                      INSERT INTO  amazonebook_reviews
                      (book_id
@@ -50,10 +57,10 @@ class AmazonbookSpiderPipeline_bookreview:
                      VALUES (
                      "{item['book_id']}",
                      "{item['reviewer_name']}",
-                     "{item['rating']}",
+                     "{(item['rating'].split('out')[0]).strip()}",
                      "{item['review_title']}",
                      "{item['review_content']}",
-                     "{item['reviewed_on']}"
+                     "{datetime.strptime((item['reviewed_on'].split('on')[1]).strip(), '%d %B %Y' )}"
                      )
         '''
         self.db.query_exec(sql_query)
