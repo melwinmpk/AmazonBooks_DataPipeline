@@ -1,15 +1,16 @@
-from pathlib import Path
 import scrapy
-from ..items import BooklistItem
+from ..items import AmazonbookSpiderItem_booklist
 
 
-class AmazonebooklistSpider(scrapy.Spider):
-    name = "amazonebooklist"
-    allowed_domains = ["www.amazon.in"]
+class BooklistSpider(scrapy.Spider):
+    name = "booklist"
+    allowed_domains = ["amazon.in"]
     start_urls =  ["https://www.amazon.in/s?i=stripbooks&bbn=976389031&rh=n%3A976389031%2Cp_n_publication_date%3A2684819031%2Cp_n_feature_three_browse-bin%3A9141482031%2Cp_n_binding_browse-bin%3A1318376031&dc&qid=1705764773&rnid=1318374031&ref=sr_nr_p_n_binding_browse-bin_9&ds=v1%3ADnZrpwSN6HQUdKmMPrF0hUMVrGOY%2FbMRz0yDiGbpnnw"]
-    
+    page_number = 2
+    current_spider = 'booklist'
+
     def parse(self, response):
-        item_container = BooklistItem()
+        item_container = AmazonbookSpiderItem_booklist()
 
         item_list = response.xpath('.//div[contains(concat(" ",normalize-space(@class)," ")," puis-card-border ")]/div[contains(concat(" ",normalize-space(@class)," ")," a-section ")]/div[contains(concat(" ",normalize-space(@class)," ")," puisg-row ")]')
         
@@ -22,8 +23,11 @@ class AmazonebooklistSpider(scrapy.Spider):
             
 
             yield item_container
+        new_next_page = response.xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "s-pagination-separator", " " ))]/@href')[0].extract()    
 
-
+        if BooklistSpider.page_number <= 2:
+            BooklistSpider.page_number += 1
+            yield response.follow(new_next_page, callback = self.parse)
         # Use of CSS insted of Xpath
         '''
         item_list = response.css('.puis-card-border > .a-section > .puisg-row')
@@ -38,3 +42,5 @@ class AmazonebooklistSpider(scrapy.Spider):
 
             yield item_container
         '''
+
+        

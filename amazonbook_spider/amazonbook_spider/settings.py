@@ -1,4 +1,4 @@
-# Scrapy settings for booklist project
+# Scrapy settings for amazonbook_spider project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,16 +7,15 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "booklist"
+BOT_NAME = "amazonbook_spider"
 
-SPIDER_MODULES = ["booklist.spiders"]
-NEWSPIDER_MODULE = "booklist.spiders"
+SPIDER_MODULES = ["amazonbook_spider.spiders"]
+NEWSPIDER_MODULE = "amazonbook_spider.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "booklist (+http://www.yourdomain.com)"
+#USER_AGENT = "amazonbook_spider (+http://www.yourdomain.com)"
 USER_AGENT = "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4201.0 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
-# Make sure you may have to change the Google User Agent once in a while
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -48,20 +47,17 @@ DOWNLOAD_DELAY = 8
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    "booklist.middlewares.BooklistSpiderMiddleware": 543,
+#    "amazonbook_spider.middlewares.AmazonbookSpiderSpiderMiddleware": 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    "booklist.middlewares.BooklistDownloaderMiddleware": 543,
+#    "amazonbook_spider.middlewares.AmazonbookSpiderDownloaderMiddleware": 543,
 #}
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
     'scrapy_user_agents.middlewares.RandomUserAgentMiddleware': 500,
-    # -- ProxyPool
-    # 'scrapy_proxy_pool.middlewares.ProxyPoolMiddleware': 610,
-    # 'scrapy_proxy_pool.middlewares.BanDetectionMiddleware': 620,
 }
 
 # Enable or disable extensions
@@ -73,7 +69,8 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   "booklist.pipelines.BooklistPipeline": 300,
+   "amazonbook_spider.pipelines.AmazonbookSpider_booklistPipeline": 300,
+   "amazonbook_spider.pipelines.AmazonbookSpider_bookreviewPipeline": 800,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
