@@ -57,5 +57,5 @@ CREATE TABLE amazonebook_reviews (
 
 <h3>Sample Output</h3>
 <img width="787" alt="image" src="https://github.com/melwinmpk/AmazonBooks_DataPipeline/assets/25386607/7943baef-cd63-4ea7-8367-a81fbfa00916">
-<img width="730" alt="image" src="https://github.com/melwinmpk/AmazonBooks_DataPipeline/assets/25386607/5a27619d-f820-4919-b64a-535c5c7a8b09">
+<img width="787" alt="image" src="https://github.com/melwinmpk/AmazonBooks_DataPipeline/assets/25386607/5a27619d-f820-4919-b64a-535c5c7a8b09">
 
