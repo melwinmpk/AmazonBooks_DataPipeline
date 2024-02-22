@@ -34,19 +34,16 @@ Loading it into Mysql Database</p>
 <pre>
 CREATE DATABASE amazonebooks;
 
-DROP TABLE
-
-IF EXISTS amazone_books;
-	CREATE TABLE amazone_books (
-		book_id INT NOT NULL AUTO_INCREMENT
-		,book_title TEXT
-		,book_amount FLOAT
-		,book_author TEXT
-		,book_rating FLOAT
-		,book_link TEXT
-		,business_date DATE DEFAULT(CURRENT_DATE)
-		,PRIMARY KEY (book_id)
-		);
+CREATE TABLE amazone_books (
+	book_id INT NOT NULL AUTO_INCREMENT
+	,book_title TEXT
+	,book_amount FLOAT
+	,book_author TEXT
+	,book_rating FLOAT
+	,book_link TEXT
+	,business_date DATE DEFAULT(CURRENT_DATE)
+	,PRIMARY KEY (book_id)
+	);
 
 CREATE TABLE amazonebook_reviews (
 	book_id INT NOT NULL
