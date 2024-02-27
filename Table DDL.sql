@@ -1,22 +1,21 @@
-create database amazonebooks;
+CREATE DATABASE amazonebooks;
 
-drop table if exists amazone_books;
-create table amazone_books (
-    book_id int NOT NULL AUTO_INCREMENT
-    ,book_title text
-    ,book_amount float
-    ,book_author text
-    ,book_rating float
-    ,book_link   text
-    ,business_date DATE DEFAULT (CURRENT_DATE)
+CREATE TABLE amazone_books (
+    book_id INT NOT NULL AUTO_INCREMENT
+    ,book_title TEXT
+    ,book_amount FLOAT
+    ,book_author TEXT
+    ,book_rating FLOAT
+    ,book_link TEXT
+    ,business_date DATE DEFAULT(CURRENT_DATE)
     ,PRIMARY KEY (book_id)
-);
+    );
 
-create table amazonebook_reviews (
-    book_id int NOT NULL
-    ,reviewer_name text
-    ,rating float
-    ,review_title text
-    ,review_content text
-    ,reviewed_on date
-);
+CREATE TABLE amazonebook_reviews (
+	book_id INT NOT NULL
+	,reviewer_name TEXT
+	,rating FLOAT
+	,review_title TEXT
+	,review_content TEXT
+	,reviewed_on DATE
+	);
