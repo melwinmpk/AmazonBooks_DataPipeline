@@ -8,7 +8,7 @@ class database_helper:
 
     def create_connection(self, data):
         # refer to understand the connection https://www.red-gate.com/simple-talk/databases/mysql/retrieving-mysql-data-python/
-        self.conn = connect(option_files = 'D:/Learning/AmazonBooks_DataPipeline/config/dbconnectors.cnf')
+        self.conn = connect(option_files = '/home/de/Projects/AmazonBooks_DataPipeline/config/dbconnectors.cnf')
         self.conn.database = data['database_name']
         self.conn.autocommit = True
         self.curr = self.conn.cursor()
