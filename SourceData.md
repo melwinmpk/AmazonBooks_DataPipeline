@@ -1,10 +1,10 @@
 <h2>Source Data Perpration</h2> 
 
-<p>Scraping few pages of Books on the Amazone website using Scrapy Library
+<p>Scraping few pages of Books on the Amazone website using Scrapy Library. Automating the entire process using Airflow
 Loading it into Mysql Database</p>
-<p><b>Important Note:</b> In this project we are scraping very few pages for learning purposes.</p>
+<p><b>Important Note:</b> In this project we are scraping a few pages for learning purposes Only.</p>
 
-<img width="1009" alt="image" src="https://github.com/melwinmpk/AmazonBooks_DataPipeline/assets/25386607/84990e9d-c2c1-4f3e-96f5-24616632a814"><br>
+<img width="1009" alt="image" src="https://github.com/melwinmpk/AmazonBooks_DataPipeline/assets/25386607/8b987143-52b7-47db-a73e-3fa177791eca"><br>
 
 <p>Developed 2 web spiders in a single Project</p> 
 <ol>
@@ -56,6 +56,9 @@ CREATE TABLE amazonebook_reviews (
 </pre>
 
 <h3>Sample Output</h3>
+<b>Dag Image</b>
+<img width="1215" alt="image" src="https://github.com/melwinmpk/AmazonBooks_DataPipeline/assets/25386607/37f602b0-2324-4cb3-8cb6-d2f647a67e93">
 <img width="787" alt="image" src="https://github.com/melwinmpk/AmazonBooks_DataPipeline/assets/25386607/7943baef-cd63-4ea7-8367-a81fbfa00916">
 <img width="787" alt="image" src="https://github.com/melwinmpk/AmazonBooks_DataPipeline/assets/25386607/5a27619d-f820-4919-b64a-535c5c7a8b09">
+<!-- <img width="787" alt="image" src="https://github.com/melwinmpk/AmazonBooks_DataPipeline/assets/25386607/c5efe69e-afea-446d-bfac-dd813778fc8e"> -->
 
