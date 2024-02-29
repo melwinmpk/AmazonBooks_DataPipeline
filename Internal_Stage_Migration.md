@@ -1,2 +1,2 @@
 
-<img width="900" alt="image" src="https://github.com/melwinmpk/AmazonBooks_DataPipeline/assets/25386607/b226c574-b166-47eb-bab6-862fb961b2f6">
+<img width="1052" alt="image" src="https://github.com/melwinmpk/AmazonBooks_DataPipeline/assets/25386607/a3b2c949-2e49-4418-a7e2-bfede2356fc9">
