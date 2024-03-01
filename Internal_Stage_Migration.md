@@ -28,6 +28,10 @@ PUT 'file:///<PATH>/amazonebooks.csv' @amazone_books_stage;
 
 COPY INTO amazone_books FROM @amazone_books_stage;
 
+Once Completed remove 
+REMOVE @amazone_books_stage;
+
+
 CREATE SCHEMA config;
 
 CREATE TABLE dag_config(
