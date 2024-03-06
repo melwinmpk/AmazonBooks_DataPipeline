@@ -55,7 +55,10 @@ def download_data_local(data):
         filename = f'{date_string}-{table_name.replace("_","-")}.csv'
 
         # If Directory is not present then create it.
+
         if not os.path.exists(outdir_path):
+            if not os.path.exists(f'{const_outdir_path}{database_name}/{table_name}'):
+                    os.mkdir(f'{const_outdir_path}{database_name}/{table_name}')
             os.mkdir(outdir_path)
 
         absolute_path = os.path.join(outdir_path, filename)
