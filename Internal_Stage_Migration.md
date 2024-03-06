@@ -52,7 +52,7 @@ CREATE TABLE dag_config(
 
 <p>Amazonebook_reviews</p>
 <pre>
-	-- Create Transient Table
+-- Create Transient Table
 
 CREATE TRANSIENT TABLE amazonebook_reviews (
     book_id INTEGER
