@@ -3,7 +3,8 @@
 
 
 <h2>Project Overview</h2>
-<p>This project, titled "Amazon Books Data Pipeline," is developed using Scrapy, a powerful Python library for web scraping. It focuses on extracting information from Amazon, particularly from the books section. The application scrapes data about books and their reviews, then loads this information into a MySQL database. This project is intended for educational purposes and demonstrates the capabilities of web scraping, data extraction, and pipeline creation.</p>
+<p>This project, titled "Amazon Books Data Pipeline," is developed using Scrapy, a powerful Python library for web scraping. It focuses on extracting information from Amazon, particularly from the books section. The application scrapes data about books and their reviews, then loads this information into a MySQL database Orchestrating the entire process using airflow. <br>
+<b>Note:</b>This project is intended for educational purposes and demonstrates the capabilities of web scraping, data extraction, and pipeline creation.</p>
 
 <h3>Features</h3>
 <ul>
@@ -22,8 +23,6 @@
 </ul>
 
 
-<p>Scraping few pages of Books on the Amazone website using Scrapy Library. Automating the entire process using Airflow
-Loading it into Mysql Database</p>
 <p><b>Important Note:</b> In this project we are scraping a few pages for learning purposes Only.</p>
 
 <img width="1009" alt="image" src="https://github.com/melwinmpk/AmazonBooks_DataPipeline/assets/25386607/8b987143-52b7-47db-a73e-3fa177791eca"><br>
