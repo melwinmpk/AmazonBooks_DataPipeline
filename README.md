@@ -73,6 +73,7 @@ CREATE TABLE amazonebook_reviews (
 	,review_title TEXT
 	,review_content TEXT
 	,reviewed_on DATE
+	,business_date DATE DEFAULT(CURRENT_DATE)
 	);
 </pre>
 
