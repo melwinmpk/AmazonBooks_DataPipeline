@@ -22,15 +22,13 @@ class AmazonbookSpider_booklistPipeline:
                       ,book_amount
                       ,book_author
                       ,book_rating
-                      ,book_link
-                      ,business_date) 
+                      ,book_link) 
                      VALUES (
                      "{item["book_title"][0]}",
                      "{item["book_amount"][0]}",
                      "{(((''.join(item["book_author"])).split("by")[1]).split('|')[0]).strip()}",
                      "{((item["book_rating"][0]).split('out')[0]).strip()}",
-                     "{item["book_link"]}",
-                     ADDDATE(current_date(),-7)
+                     "{item["book_link"]}"
                      )
         '''
         self.db = database_helper('amazonebooks')
@@ -50,8 +48,7 @@ class AmazonbookSpider_bookreviewPipeline:
                     ,rating
                     ,review_title
                     ,review_content
-                    ,reviewed_on
-                    ,business_date)
+                    ,reviewed_on)
                      VALUES (
                      "{item['book_id']}",
                      "{item['reviewer_name']}",
@@ -59,7 +56,6 @@ class AmazonbookSpider_bookreviewPipeline:
                      "{item['review_title'].replace('"','`')}",
                      "{item['review_content'].replace('"','`')}",
                      "{datetime.strptime((item['reviewed_on'].split('on')[1]).strip(), '%d %B %Y' )}"
-                     ,ADDDATE(current_date(),-7)
                      )
         '''
         self.db = database_helper('amazonebooks')
