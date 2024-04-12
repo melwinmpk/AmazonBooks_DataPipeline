@@ -87,7 +87,7 @@ CREATE TABLE amazonebook_reviews (
 <img width="787" alt="image" src="https://github.com/melwinmpk/AmazonBooks_DataPipeline/assets/25386607/5a27619d-f820-4919-b64a-535c5c7a8b09">
 <!-- <img width="787" alt="image" src="https://github.com/melwinmpk/AmazonBooks_DataPipeline/assets/25386607/c5efe69e-afea-446d-bfac-dd813778fc8e"> -->
 
-<h3>Referrence for this Project</h3>
+<h3>Reference</h3>
 <a href="https://www.youtube.com/watch?v=ve_0h4Y8nuI&list=PLhTjy8cBISEqkN-5Ku_kXG4QW33sxQo0t" target="_blank">Youtube Tutorial for Scrapy</a>
 
 
