@@ -1,7 +1,7 @@
 # AmazonBookData_DataPipeline
 
 ## Youtube Video
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/QaDrcc9CGSo/0.jpg)](https://www.youtube.com/watch?v=QaDrcc9CGSo)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/d7zr01n3lDg/0.jpg)](https://www.youtube.com/watch?v=d7zr01n3lDg)
 
 <h2>Project Overview</h2>
 <p>This project, titled "Amazon Books Data Pipeline," is developed using Scrapy, a powerful Python library for web scraping. It focuses on extracting information from Amazon, particularly from the books section. The application scrapes data about books and their reviews, then loads this information into a MySQL database Orchestrating the entire process using airflow. <br>
